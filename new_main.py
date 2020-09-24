@@ -88,7 +88,7 @@ if torch.cuda.is_available():
 	D = D.cuda()
 	G = G.cuda()
 
-device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Binary cross entropy loss and optimizer
 criterion = nn.BCELoss()
 d_optimizer = torch.optim.Adam(D.parameters(), lr=0.0002)
